@@ -1,5 +1,4 @@
-
-use {Status};
+use {Status, FILE_SYSTEM_GUID, Guid};
 
 #[repr(C)]
 pub struct SimpleFileSystem
@@ -10,8 +9,8 @@ pub struct SimpleFileSystem
 
 impl super::Protocol for SimpleFileSystem
 {
-	fn guid() -> ::Guid {
-		::Guid( 0x0964e5b22,0x6459,0x11d2, [0x8e,0x39,0x00,0xa0,0xc9,0x69,0x72,0x3b] )
+	fn guid() -> Guid {
+		FILE_SYSTEM_GUID
 	}
 	unsafe fn from_ptr(v: *const ::Void) -> *const Self {
 		v as *const _

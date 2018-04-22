@@ -1,11 +1,8 @@
 ///
 ///
 ///
-use {Status, Guid};
+use {Status, GRAPHICS_OUTPUT_PROTOCOL_GUID, Guid};
 use boot_services::BootServices;
-
-/// Protocol GUID
-pub const GUID: Guid = Guid(0x9042a9de,0x23dc,0x4a38,[0x96,0xfb,0x7a,0xde,0xd0,0x80,0x51,0x6a]);
 
 #[repr(C)]
 pub struct GraphicsOutput
@@ -17,8 +14,8 @@ pub struct GraphicsOutput
 }
 impl super::Protocol for GraphicsOutput
 {
-	fn guid() -> ::Guid {
-		GUID
+	fn guid() -> Guid {
+		GRAPHICS_OUTPUT_PROTOCOL_GUID
 	}
 	unsafe fn from_ptr(ptr: *const ::Void) -> *const Self {
 		ptr as *const GraphicsOutput
