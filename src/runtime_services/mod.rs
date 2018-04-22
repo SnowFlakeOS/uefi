@@ -132,7 +132,24 @@ pub struct Time
 	pub time_zone: u16,	// -1440 to 1440 or 2047
 	pub daylight: u8,
 	_pad2: u8,
+}
 
+impl Default for Time {
+    fn default() -> Self {
+        Time {
+            year: 0, 
+            month: 0,
+            day: 0,
+            hour: 0,
+            minute: 0,
+            second: 0,
+            _pad: 0,
+            nanosecond: 0,
+            time_zone: 0,	
+            daylight: 0,
+            _pad2: 0
+        }
+    }
 }
 
 #[repr(C)]
