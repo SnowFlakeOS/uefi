@@ -22,5 +22,5 @@ mod device_path;
 mod simple_file_system;
 
 mod graphics_output;
-mod file;
+pub mod file;
 
