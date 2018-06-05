@@ -9,7 +9,7 @@ pub struct GraphicsOutput
 {
 	query_mode: extern "win64" fn(&GraphicsOutput, u32, &mut usize, &mut *const ModeInformation)->Status,
 	set_mode: extern "win64" fn(&GraphicsOutput, u32)->Status,
-	blt: extern "win64" fn(&GraphicsOutput, *mut BltPixel, BltOperation, usize,usize, usize,usize, usize,usize,usize)->Status,
+	pub blt: extern "win64" fn(&GraphicsOutput, *mut BltPixel, BltOperation, usize,usize, usize,usize, usize,usize,usize)->Status,
 	pub mode: &'static Mode,
 }
 impl super::Protocol for GraphicsOutput
