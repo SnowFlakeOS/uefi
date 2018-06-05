@@ -6,7 +6,7 @@ pub use self::loaded_image::LoadedImage;
 pub use self::loaded_image_device_path::LoadedImageDevicePath;
 pub use self::device_path::DevicePath;
 pub use self::simple_file_system::SimpleFileSystem;
-pub use self::graphics_output::{GraphicsOutput, PixelFormat};
+pub use self::graphics_output::{GraphicsOutput, PixelFormat, BltOperation, BltPixel};
 
 pub use self::file::*;
 
