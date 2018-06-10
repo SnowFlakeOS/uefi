@@ -23,6 +23,7 @@ pub mod raw
 pub type PoolPointer<T> = *mut T;
 
 /// Wrapped `Event` handle
+#[derive(Copy, Clone, Debug, Eq, Ord, PartialEq, PartialOrd)]
 pub struct Event(pub raw::Event);
 
 #[repr(C)]
@@ -42,7 +43,7 @@ pub struct BootServices
 	pub free_pool: efi_fcn!{ fn(*mut Void) -> Status },
 
 	// Timing and events
-	pub create_event: efi_fcn!{ fn(u32, /*notify_tpl:*/ Tpl, /*notify_function:*/ Option<EventNotifyFcn>, *mut Void, &mut raw::Event) -> Status },
+	pub create_event: efi_fcn!{ fn(u32, /*notify_tpl:*/ Tpl, /*notify_function:*/ Option<EventNotifyFcn>, *mut Void, &mut Event) -> Status },
 	pub set_timer: efi_fcn!{ fn(raw::Event, TimerDelay, u64) -> Status },
 	pub wait_for_event: efi_fcn!{ fn(usize, /*events:*/ *const raw::Event, &mut usize) -> Status },
 	pub signal_event: efi_fcn!{ fn(raw::Event) -> Status },
