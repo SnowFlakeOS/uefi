@@ -145,8 +145,8 @@ impl SimpleTextOutputInterface
 #[derive(Default)]
 pub struct InputKey
 {
-	scan_code: u16,
-	unicode_char: u16,
+	pub scan_code: u16,
+	pub unicode_char: u16,
 }
 
 #[repr(C)]
