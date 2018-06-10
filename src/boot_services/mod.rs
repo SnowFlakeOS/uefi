@@ -23,7 +23,7 @@ pub mod raw
 pub type PoolPointer<T> = *mut T;
 
 /// Wrapped `Event` handle
-pub struct Event(raw::Event);
+pub struct Event(pub raw::Event);
 
 #[repr(C)]
 pub struct BootServices
