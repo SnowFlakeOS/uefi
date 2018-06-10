@@ -154,7 +154,7 @@ pub struct SimpleInputInterface
 {
 	reset: extern "win64" fn(this: *mut SimpleInputInterface, extended_verification: bool) -> Status,
 	read_key_stroke: extern "win64" fn(this: *mut SimpleInputInterface, keyout: &mut InputKey) -> Status,
-	wait_for_key: ::boot_services::raw::Event,
+	pub wait_for_key: ::boot_services::raw::Event,
 }
 
 impl SimpleInputInterface
