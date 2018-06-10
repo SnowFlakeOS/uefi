@@ -21,7 +21,7 @@ pub use self::str16::Str16;
 pub use self::str16::{CStr16Ptr, CStr16};
 
 pub use self::con::{EfiLogger};
-pub use self::con::{SimpleInputInterface,SimpleTextOutputInterface};
+pub use self::con::{InputKey, SimpleInputInterface, SimpleTextOutputInterface};
 
 pub use self::status::Status;
 
