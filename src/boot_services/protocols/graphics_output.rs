@@ -7,8 +7,8 @@ use boot_services::BootServices;
 #[repr(C)]
 pub struct GraphicsOutput
 {
-	query_mode: extern "win64" fn(&GraphicsOutput, u32, &mut usize, &mut *const ModeInformation)->Status,
-	set_mode: extern "win64" fn(&GraphicsOutput, u32)->Status,
+	pub query_mode: extern "win64" fn(&GraphicsOutput, u32, &mut usize, &mut *const ModeInformation)->Status,
+	pub set_mode: extern "win64" fn(&GraphicsOutput, u32)->Status,
 	pub blt: extern "win64" fn(&GraphicsOutput, *mut BltPixel, BltOperation, usize,usize, usize,usize, usize,usize,usize)->Status,
 	pub mode: &'static Mode,
 }
