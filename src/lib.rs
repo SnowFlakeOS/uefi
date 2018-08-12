@@ -165,6 +165,7 @@ impl<'a> SystemTable<'a>
 	}
 }
 
+#[derive(Copy, Clone, Debug)]
 pub struct ConfigurationTable
 {
 	pub vendor_guid: Guid,
